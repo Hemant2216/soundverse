@@ -14,9 +14,9 @@ app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 
 conn = psycopg2.connect(
     dbname="soundverse",
-    user="postgres",
-    password="root",
-    host="localhost",
+    user="root",
+    password="Lz441af5qjA1g9biLkavuWE9Serg8Rdo",
+    host="dpg-cvds4lpc1ekc73e9alo0-a",
     port="5432"
 )
 
