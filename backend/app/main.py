@@ -28,7 +28,7 @@ async def upload_image(file: UploadFile = File(...)):
         with open(file_location, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
 
-        image_url = f"http://localhost:8000/uploads/{file.filename}"
+        image_url = f"https://soundverse-t42y.onrender.com/uploads/{file.filename}"
 
         with conn.cursor() as cursor:
             cursor.execute("INSERT INTO images (image_url, uploaded_at) VALUES (%s, %s)", (image_url, datetime.now()))
@@ -52,7 +52,7 @@ async def upload_audio(artist_id: int = Form(...), file: UploadFile = File(...))
         with open(file_location, "wb") as buffer:
             shutil.copyfileobj(file.file, buffer)
 
-        audio_url = f"http://localhost:8000/uploads/{file.filename}"
+        audio_url = f"https://soundverse-t42y.onrender.com/uploads/{file.filename}"
 
         with conn.cursor() as cursor:
             cursor.execute("SELECT id FROM artists WHERE id = %s", (artist_id,))
